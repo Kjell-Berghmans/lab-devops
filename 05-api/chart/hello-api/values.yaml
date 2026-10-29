@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 
 image:
   # name of the k3d registry as seen from inside the cluster
@@ -7,7 +7,7 @@ image:
   tag: ""
   pullPolicy: IfNotPresent
 
-greeting: "Hello from the DevOps lab!"
+greeting: "Hello from the DevOps lab, deployed by GitOps!"
 
 service:
   type: ClusterIP
