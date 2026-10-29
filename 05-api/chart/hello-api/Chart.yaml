@@ -1,0 +1,8 @@
+apiVersion: v2
+name: hello-api
+description: Small FastAPI demo API for the DevOps lab
+type: application
+# version of the chart itself
+version: 0.1.0
+# version of the app it deploys (default image tag)
+appVersion: "0.1.0"

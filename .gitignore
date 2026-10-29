@@ -1,0 +1,5 @@
+# Terraform: provider cache, local state (may contain secrets) and saved plans
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan

@@ -1,0 +1,24 @@
+# k3d cluster for the DevOps lab
+# Create:  k3d cluster create --config k3d-cluster.yaml
+# Delete:  k3d cluster delete devops-lab
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: devops-lab
+servers: 1
+agents: 2
+ports:
+  # host 8080 -> Traefik ingress (port 80) on the k3d load balancer
+  - port: 8080:80
+    nodeFilters:
+      - loadbalancer
+registries:
+  # local registry for our own images (step 5), reachable from the host at localhost:5000
+  create:
+    name: registry.localhost
+    host: "0.0.0.0"
+    hostPort: "5000"
+options:
+  kubeconfig:
+    updateDefaultKubeconfig: true
+    switchCurrentContext: true

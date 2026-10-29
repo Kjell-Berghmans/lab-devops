@@ -1,0 +1,2 @@
+# keep LF line endings (YAML, Dockerfile, shell) even on Windows
+* text=auto eol=lf

@@ -1,0 +1,15 @@
+# Helm values for the argo/argo-cd chart
+configs:
+  params:
+    # TLS is terminated by Traefik (or not at all locally), so Argo CD serves plain HTTP
+    server.insecure: true
+server:
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    hostname: argocd.localhost
+# Keep it light for a laptop cluster
+dex:
+  enabled: false
+notifications:
+  enabled: false

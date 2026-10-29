@@ -1,0 +1,26 @@
+replicaCount: 2
+
+image:
+  # name of the k3d registry as seen from inside the cluster
+  repository: registry.localhost:5000/hello-api
+  # empty = use appVersion from Chart.yaml
+  tag: ""
+  pullPolicy: IfNotPresent
+
+greeting: "Hello from the DevOps lab!"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: traefik
+  host: api.localhost
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    memory: 128Mi
