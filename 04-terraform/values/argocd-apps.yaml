@@ -17,6 +17,18 @@ applications:
               ingressClassName: traefik
               hosts:
                 - grafana.localhost
+          prometheus:
+            ingress:
+              enabled: true
+              ingressClassName: traefik
+              hosts:
+                - prometheus.localhost
+          alertmanager:
+            ingress:
+              enabled: true
+              ingressClassName: traefik
+              hosts:
+                - alertmanager.localhost
           # k3d nodes are Docker containers: the host root fs mount fails there
           prometheus-node-exporter:
             hostRootFsMount:
